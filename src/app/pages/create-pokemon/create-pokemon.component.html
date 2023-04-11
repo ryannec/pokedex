@@ -1,0 +1,39 @@
+<form
+  (ngSubmit)="createPokemonForm.valid && onSubmit()"
+  [formGroup]="createPokemonForm"
+  #myForm="ngForm"
+>
+  <fieldset>
+    <label for="name">Nom</label>
+    <p>
+      <input
+        type="text"
+        id="name"
+        formControlName="name"
+        placeholder="pikachu"
+      />
+    </p>
+    <div *ngIf="myForm.submitted && createPokemonForm.controls.name.errors">
+      <span *ngIf="createPokemonForm.controls.name.errors?.['required']"
+        >Le champs nom est requis</span
+      >
+    </div>
+  </fieldset>
+  <fieldset>
+    <div *ngIf="myForm.submitted && createPokemonForm.controls.url.errors">
+      <span *ngIf="createPokemonForm.controls.url.errors?.['required']"
+        >un lien pour l'image est requis</span
+      >
+    </div>
+    <label for="url">Image</label>
+    <p>
+      <input
+        type="text"
+        id="url"
+        formControlName="url"
+        placeholder="https://encrypted-tbn0.gstatic.com......"
+      />
+    </p>
+  </fieldset>
+  <input type="submit" value="Ajouter" />
+</form>

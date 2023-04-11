@@ -1,7 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CreatePokemonComponent } from './pages/create-pokemon/create-pokemon.component';
+import { PokedexPageComponent } from './pages/pokedex-page/pokedex-page.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+  path: "", 
+  component: PokedexPageComponent
+  },
+  {
+    path: "create",
+    component: CreatePokemonComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
