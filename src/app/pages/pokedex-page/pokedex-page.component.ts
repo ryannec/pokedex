@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { pokemonData } from 'src/app/shared/pokemon-mock';
 import { Pokemon } from 'src/app/shared/pokemon.model';
 import { PokedexService } from 'src/app/shared/services/pokedex.service'; 
 
@@ -8,7 +9,8 @@ import { PokedexService } from 'src/app/shared/services/pokedex.service';
   styleUrls: ['./pokedex-page.component.css']
 })
 export class PokedexPageComponent {
-pokemons: Pokemon[] = [];
+  arrayOfPokemon: Pokemon[] = [];
+
 currentpokemon: Pokemon = {
   name: "",
   image: "",
@@ -17,8 +19,7 @@ currentpokemon: Pokemon = {
 constructor(private service: PokedexService) {}
 
 ngOnInit(){
-this.pokemons = this.service.getPokemonsFromData();
-
+  this.arrayOfPokemon = this.service.getPokemonList();
 }
 onPokemonChange(event: Pokemon){
 this.currentpokemon = event;

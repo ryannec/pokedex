@@ -10,7 +10,7 @@
         type="text"
         id="name"
         formControlName="name"
-        placeholder="pikachu"
+        placeholder="pikachu" [(ngModel)]="newPokemon.name"
       />
     </p>
     <div *ngIf="myForm.submitted && createPokemonForm.controls.name.errors">
@@ -31,7 +31,7 @@
         type="text"
         id="url"
         formControlName="url"
-        placeholder="https://encrypted-tbn0.gstatic.com......"
+        placeholder="https://encrypted-tbn0.gstatic.com......" [(ngModel)]="newPokemon.image"
       />
     </p>
   </fieldset>

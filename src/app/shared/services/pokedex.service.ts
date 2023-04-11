@@ -6,10 +6,14 @@ import { Pokemon } from '../pokemon.model';
 })
 export class PokedexService {
   pokemonData = pokemonData;
+  arrayOfPokemonsFromService: Pokemon[] = pokemonData;
   constructor() { }
 
-  getPokemonsFromData() {
-    return pokemonData;
+  getPokemonList() {
+    return this.arrayOfPokemonsFromService;
   }
-  addPokemon(pokemon : Pokemon){}
+
+  addPokemon(newPokemon : Pokemon){
+    this.arrayOfPokemonsFromService.push(newPokemon);
+  }
 }
