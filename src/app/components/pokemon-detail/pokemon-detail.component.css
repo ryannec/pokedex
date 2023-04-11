@@ -1,0 +1,15 @@
+.pokemon-container {
+  border: solid grey 1px;
+  width: 20vw;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  object-fit: contain;
+width: 100%;
+height: auto;
+border-radius: 20px;
+}
